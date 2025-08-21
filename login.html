@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup - Travels & Tours</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* Style for the form container overlay */
+        .form-container-bg {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        /* Hide the signup form by default */
+        #signup-form {
+            display: none;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900 text-gray-200">
+
+    <div class="w-full max-w-md mx-auto p-8 rounded-2xl shadow-2xl form-container-bg border border-gray-700">
+
+        <!-- Logo and Title -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white tracking-wider">Travels & Tours</h1>
+            <p class="text-gray-300 mt-2">Your next adventure awaits.</p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2 class="text-2xl font-semibold text-center text-white mb-6">Login to Your Account</h2>
+            <form action="#" method="POST">
+                <!-- Email Input -->
+                <div class="mb-4 relative">
+                    <span class="absolute left-4 top-3.5 text-gray-400"><i class="fas fa-envelope"></i></span>
+                    <input type="email" id="login-email" name="email" placeholder="Email Address" class="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" required>
+                </div>
+                <!-- Password Input -->
+                <div class="mb-4 relative">
+                    <span class="absolute left-4 top-3.5 text-gray-400"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="login-password" name="password" placeholder="Password" maxlength="" class="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" required>
+                </div>
+                <!-- Remember Me & Forgot Password -->
+                <div class="flex items-center justify-between mb-6 text-sm">
+                    <label class="flex items-center text-gray-300">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
+                        <span class="ml-2">Remember me</span>
+                    </label>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 transition duration-300">Forgot Password?</a>
+                </div>
+                <!-- Login Button -->
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Login
+                </button>
+            </form>
+            <!-- Switch to Signup -->
+            <p class="mt-8 text-center text-gray-300">
+                Don't have an account? <a href="#" id="show-signup" class="font-semibold text-blue-400 hover:text-blue-300 transition duration-300">Sign up</a>
+            </p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form">
+            <h2 class="text-2xl font-semibold text-center text-white mb-6">Create a New Account</h2>
+            <!-- Error Message Container -->
+            <div id="signup-error" class="text-red-400 text-center mb-4 font-medium"></div>
+            <form action="#" method="POST">
+                <!-- Full Name Input -->
+                <div class="mb-4 relative">
+                    <span class="absolute left-4 top-3.5 text-gray-400"><i class="fas fa-user"></i></span>
+                    <input type="text" id="signup-name" name="name" placeholder="Full Name" class="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" required>
+                </div>
+                <!-- Email Input -->
+                <div class="mb-4 relative">
+                    <span class="absolute left-4 top-3.5 text-gray-400"><i class="fas fa-envelope"></i></span>
+                    <input type="email" id="signup-email" name="email" placeholder="Email Address" class="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" required>
+                </div>
+                <!-- Password Input -->
+                <div class="mb-4 relative">
+                    <span class="absolute left-4 top-3.5 text-gray-400"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="signup-password" name="password" placeholder="Create Password" class="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" required>
+                </div>
+                 <!-- Confirm Password Input -->
+                <div class="mb-6 relative">
+                    <span class="absolute left-4 top-3.5 text-gray-400"><i class="fas fa-check-circle"></i></span>
+                    <input type="password" id="signup-confirm-password" name="confirm-password" placeholder="Confirm Password" class="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" required>
+                </div>
+                <!-- Signup Button -->
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Create Account
+                </button>
+            </form>
+            <!-- Switch to Login -->
+            <p class="mt-8 text-center text-gray-300">
+                Already have an account? <a href="#" id="show-login" class="font-semibold text-green-400 hover:text-green-300 transition duration-300">Log in</a>
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the elements for switching between forms
+        const loginFormContainer = document.getElementById('login-form');
+        const signupFormContainer = document.getElementById('signup-form');
+        const showSignupLink = document.getElementById('show-signup');
+        const showLoginLink = document.getElementById('show-login');
+
+        // Event listener to show the signup form
+        showSignupLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from navigating
+            loginFormContainer.style.display = 'none';
+            signupFormContainer.style.display = 'block';
+        });
+
+        // Event listener to show the login form
+        showLoginLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from navigating
+            signupFormContainer.style.display = 'none';
+            loginFormContainer.style.display = 'block';
+        });
+
+        // Handle login form submission for redirection
+        const loginForm = document.querySelector('#login-form form');
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+        });
+
+        // Handle signup form submission with validation
+        const signupForm = document.querySelector('#signup-form form');
+        const signupError = document.getElementById('signup-error');
+
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default submission
+
+            // Clear previous errors
+            signupError.textContent = '';
+
+            // Get form values
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+            // Email format validation using a regular expression
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                signupError.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Password length validation
+            if (password.length > 8) {
+                signupError.textContent = 'Password must not be greater than 8 characters.';
+                return;
+            }
+
+            // Password match validation
+            if (password !== confirmPassword) {
+                signupError.textContent = 'Passwords do not match.';
+                return;
+            }
+
+            // If all validations pass, you can submit the form or redirect
+            console.log('Signup successful!');
+            // For this example, we'll redirect to index.html upon successful signup
+            window.location.href = 'index.html';
+        });
+    </script>
+
+</body>
+</html>

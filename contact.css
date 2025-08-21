@@ -1,0 +1,113 @@
+nav {
+  background-color: #333;
+  height: 60px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #241e1e;
+}
+
+nav ul li.active a {
+  background-color: #241e1e;
+}
+
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+.book{
+  background: #f9f9f9;
+  padding: 50px;
+}
+.main-text h1{
+  text-align: center;
+  text-shadow: 0px 1px 1px rgb(0, 0, 0);
+  font-weight: 600;
+}
+.main-text h1 span{
+  color: #9305f1;
+}
+.book .card{
+  border-radius: 10px;
+  box-shadow: 10x 10px 10px -6px rgb(29, 18, 184);
+}
+.book .row{
+  margin-top: 30px;
+}
+.book form input{
+  padding: 10px;
+  color: black;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px -6px black;
+}
+.book form textarea{
+  border: none;
+  border-radius: 10px;
+  resize: none;
+  box-shadow: 0px 5px 5px -6px black;
+  height: 200px;
+}
+.book .submit{
+  width: 160px;
+  font-size: 16px;
+  font-weight: 550;
+  background: #aa0be9;
+  color: white;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+.book .submit:hover{
+  width: 170px;
+}
+@media (max-width:765px){
+  .book{
+      padding: 0;
+  }
+  .main-text h1{
+      padding: 20px;
+  }
+}
+.btn-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*.btn-file input[type="file"] {
+  margin-bottom: 10px;
+}
+.btn-file input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.btn-file input[type="submit"]:hover {
+  background-color: #45a049;
+}*/

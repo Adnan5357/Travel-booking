@@ -1,0 +1,324 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+            background-image: url('https://placehold.co/1920x1080/E0F2F7/FFFFFF/png?text=Abstract+Blue+Background'); /* A subtle blue abstract background */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-attachment: fixed; /* Keep background fixed while scrolling */
+        }
+
+        /* Top Navigation/Breadcrumbs */
+        .top-nav {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .top-nav .nav-item {
+            color: #a0aec0;
+            font-weight: 500;
+            position: relative;
+            padding: 0 1rem;
+        }
+        .top-nav .nav-item.active {
+            color: #2d3748;
+            font-weight: 700;
+        }
+        .top-nav .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background-color: #3182ce;
+            border-radius: 2px;
+        }
+        .top-nav .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #3182ce;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .top-nav .logo-circle {
+            background-color: #3182ce;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            gap: 2.5rem;
+            width: 100%;
+            max-width: 900px;
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        /* Card Display Area */
+        .card-display {
+            flex: 1; /* Takes remaining space */
+            min-width: 300px; /* Minimum width for card to display nicely */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px; /* For 3D effect */
+            height: 300px; /* Fixed height to keep it centered */
+            padding: 1rem;
+        }
+        .credit-card {
+            width: 300px;
+            height: 190px;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb, #3b82f6); /* Blue gradient */
+            border-radius: 0.75rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        /* Optional: Add a subtle 3D hover effect */
+        .credit-card:hover {
+             transform: rotateY(20deg) rotateX(20deg);
+        }
+
+        .credit-card-chip {
+            width: 45px;
+            height: 30px;
+            background-color: #d4af37; /* Gold color */
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .credit-card-chip::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 2px;
+        }
+        .credit-card-info {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+        .credit-card-valid {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: auto; /* Pushes to bottom */
+        }
+        .credit-card-name {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+        .credit-card-bank {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        .credit-card-wifi {
+            position: absolute;
+            top: 3.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+        .credit-card-back {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            width: 300px;
+            height: 190px;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb, #3b82f6);
+            border-radius: 0.75rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+            transform: translateZ(-20px) rotateY(180deg); /* Position slightly behind and flipped */
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden; /* Hide the back of the front card */
+            transform-origin: center center;
+            opacity: 0.8;
+            filter: brightness(0.9);
+        }
+        .credit-card-back .stripe {
+            width: 100%;
+            height: 40px;
+            background-color: #2d3748;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+        .credit-card-back .cvv-area {
+            background-color: white;
+            color: #482f2d;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 80%;
+            text-align: right;
+        }
+
+        /* Payment Form Area */
+        .payment-form-container {
+            flex: 1.2; /* Takes more space than card display */
+            min-width: 350px; /* Minimum width for form */
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+        }
+        .payment-form-container h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #48372d;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .input-wrapper {
+            margin-bottom: 1.5rem;
+        }
+        .input-wrapper label {
+            display: block;
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .input-wrapper input, .input-wrapper select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .input-wrapper input:focus, .input-wrapper select:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+        }
+        .input-wrapper.card-number-input {
+            position: relative;
+        }
+        .input-wrapper.card-number-input input {
+            padding-right: 3rem; /* Space for icon */
+        }
+        .input-wrapper.card-number-input .card-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            font-size: 1.25rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .button-group button {
+            flex: 1;
+            padding: 0.85rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .confirm-btn {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+        }
+        .confirm-btn:hover {
+            background-color: #2c5282;
+            transform: translateY(-1px);
+        }
+        .cancel-btn {
+            background-color: #f7fafc;
+            color: #383737;
+            border: 1px solid #e2e8f0;
+        }
+        .cancel-btn:hover {
+            background-color: #edf2f7;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card-display, .payment-form-container {
+                width: 100%;
+                min-width: unset;
+                max-width: 480px; /* Constrain width on small screens */
+            }
+            .top-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .top-nav nav {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+        @media (max-width: 480px) {
+            .container, .top-nav, .payment-form-container {
+                padding: 1.5rem;
+            }
+            .header-title {
+                font-size: 2rem;
+            }
+            .credit-card {
+                width: 280px;
+                height: 175px;
+                padding: 1.2rem;
+            }
+            .credit-card-info {
+                font-size: 1.3rem;
+            }
+        }

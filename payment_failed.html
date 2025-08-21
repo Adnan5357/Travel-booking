@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed ❌</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right bottom, #fde4e4, #f8caca, #ef9a9a); /* Soothing red gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .failure-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Soft, prominent shadow */
+            padding: 3rem 2.5rem; /* Generous padding */
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            transform: translateY(0);
+            transition: transform 0.3s ease-out;
+            animation: fadeInScale 0.6s ease-out forwards; /* Fade in and slightly scale up */
+        }
+
+        /* Keyframes for fade-in and scale effect on container */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .cross-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #ef4444, #dc2626); /* Red gradient for circle */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 2.5rem auto; /* Center and spacing below */
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4); /* Red shadow */
+            position: relative;
+            transform: scale(0); /* Start hidden for animation */
+            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.3s forwards; /* Pop-in animation */
+        }
+
+        /* Keyframes for cross circle pop-in */
+        @keyframes popIn {
+            from {
+                transform: scale(0);
+            }
+            70% {
+                transform: scale(1.1);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .cross-circle i {
+            color: white;
+            font-size: 3.5rem;
+            opacity: 0; /* Start hidden for animation */
+            animation: drawCross 0.4s ease-out 0.8s forwards; /* Draw cross animation */
+        }
+
+        /* Keyframes for drawing the cross mark */
+        @keyframes drawCross {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem; /* text-4xl */
+            font-weight: 800; /* Extra bold */
+            color: #dc2626; /* Strong red */
+            margin-bottom: 0.75rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+        }
+
+        p {
+            font-size: 1.125rem; /* text-lg */
+            color: #4a5568; /* Gray text */
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background: linear-gradient(to right, #6366f1, #8b5cf6); /* Purple gradient button */
+            color: white;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3); /* Button shadow */
+            letter-spacing: 0.05em;
+        }
+
+        .home-button:hover {
+            background: linear-gradient(to right, #4f46e5, #7c3aed); /* Darker gradient on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .home-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .failure-container {
+                padding: 2.5rem 1.5rem;
+                border-radius: 1rem;
+            }
+            .cross-circle {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 2rem;
+            }
+            .cross-circle i {
+                font-size: 2.8rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .home-button {
+                padding: 0.8rem 1.8rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="failure-container">
+        <div class="cross-circle">
+            <i class="fas fa-times"></i>
+        </div>
+        <h1>Payment Failed!</h1>
+        <p>We encountered an issue processing your payment. Please try again or use a different payment method.</p>
+        <a href="payment.html" class="home-button">Try Again</a>
+    </div>
+</body>
+</html>
